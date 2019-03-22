@@ -32,7 +32,8 @@ export class ProjectGenerator extends BaseGenerator<ProjectQuestions> {
           }
 
           return true;
-        }
+        },
+        When: _=> this.options[ProjectQuestions.projectName] === undefined
       })
     );
 
