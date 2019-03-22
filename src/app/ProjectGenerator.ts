@@ -33,7 +33,7 @@ export class ProjectGenerator extends BaseGenerator<ProjectQuestions> {
 
           return true;
         },
-        When: _=> this.options[ProjectQuestions.projectName] === undefined
+        When: _ => this.tryGetAnswer(ProjectQuestions.projectName) === undefined
       })
     );
 
@@ -52,7 +52,10 @@ export class ProjectGenerator extends BaseGenerator<ProjectQuestions> {
 
           return accepted;
         },
-        When: () => !validateNpmPackageNameTyped(this.answers.projectName).validForNewPackages
+        When: () => {
+          const name = this.tryGetAnswer(ProjectQuestions.projectName);
+          return !validateNpmPackageNameTyped(name).validForNewPackages;
+        }
       })
     );
 
