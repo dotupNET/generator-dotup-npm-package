@@ -1,3 +1,3 @@
-import { MyGenerator } from './MyGenerator';
+import { ProjectGenerator } from './ProjectGenerator';
 
-module.exports = MyGenerator;
+module.exports = ProjectGenerator;

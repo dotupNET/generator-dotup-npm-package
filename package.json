@@ -1,15 +1,24 @@
 {
-  "version": "0.0.0",
+  "version": "0.0.2",
   "name": "generator-dotup-npm-package",
   "author": {
     "name": "Peter Ullrich",
     "email": "dotup.software@gmail.com"
   },
+  "description": "Yeoman generator to create basic npm package.json file.",
+  "main": "generators/app/index.js",
+  "types": "generators/app/index.d.ts",
   "keywords": [
-    "TODO"
+    "yeoman",
+    "typescript",
+    "generator",
+    "npm",
+    "package"
   ],
   "dependencies": {
     "dotup-typescript-yeoman-generators": "^0.1.16",
+    "validate-npm-package-name-typed": "^3.0.1",
+    "inquirer": "^6.2.2",
     "yeoman-generator": "^3.2.0",
     "chalk": "^2.4.2",
     "yosay": "^2.0.2"
@@ -44,9 +53,6 @@
       "templates"
     ]
   },
-  "description": "TODO",
-  "main": "generators/app/index.js",
-  "types": "generators/app/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "node node_modules/mocha/bin/mocha --require ts-node/register test/*.test.ts --reporter spec",
