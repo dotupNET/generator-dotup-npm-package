@@ -1,6 +1,5 @@
 // tslint:disable-next-line: max-line-length
-import { BaseGenerator, GeneratorOptions, InputQuestion, InquirerQuestionType, Question, StoreQuestion, ITypedProperty } from 'dotup-typescript-yeoman-generators';
-import inquirer = require('inquirer');
+import { BaseGenerator, GeneratorOptions, InputQuestion, InquirerQuestionType, Question, StoreQuestion, ITypedProperty, SharedOptions } from 'dotup-typescript-yeoman-generators';
 import validateNpmPackageNameTyped from 'validate-npm-package-name-typed';
 import { ProjectQuestions } from './ProjectQuestions';
 import { TypeSaveProperty, Nested } from 'dotup-ts-types';
@@ -10,8 +9,8 @@ export type PartialProjectQuestions = Partial<TypeSaveProperty<Nested<ProjectQue
 // export default!!
 export class ProjectGenerator extends BaseGenerator<ProjectQuestions> {
 
-  constructor(args: string | string[], options: GeneratorOptions<ProjectQuestions>) {
-    super(args, options);
+  constructor(args: string | string[], options: GeneratorOptions<ProjectQuestions>, sharedOptions?: SharedOptions<ProjectQuestions>) {
+    super(args, options, sharedOptions);
     super.registerMethod(this);
 
     this.writeOptionsToAnswers(ProjectQuestions);
