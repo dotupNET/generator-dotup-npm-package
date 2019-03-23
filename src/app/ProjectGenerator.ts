@@ -1,8 +1,8 @@
 // tslint:disable-next-line: max-line-length
-import { BaseGenerator, GeneratorOptions, InputQuestion, InquirerQuestionType, Question, StoreQuestion, ITypedProperty, SharedOptions } from 'dotup-typescript-yeoman-generators';
+import { Nested, TypeSaveProperty } from 'dotup-ts-types';
+import { BaseGenerator, GeneratorOptions, InputQuestion, InquirerQuestionType, Question } from 'dotup-typescript-yeoman-generators';
 import validateNpmPackageNameTyped from 'validate-npm-package-name-typed';
 import { ProjectQuestions } from './ProjectQuestions';
-import { TypeSaveProperty, Nested } from 'dotup-ts-types';
 
 export type PartialProjectQuestions = Partial<TypeSaveProperty<Nested<ProjectQuestions, string>>>;
 
@@ -213,30 +213,6 @@ export class ProjectGenerator extends BaseGenerator<ProjectQuestions> {
     //     throw new Error('Project type not implemented');
     // }
 
-  }
-
-  async configuring(): Promise<void> {
-    // this.git = new GitTools(this.answers.username, this.answers.repositoryName);
-  }
-
-  async install(): Promise<void> {
-  }
-
-  async end(): Promise<void> {
-    // this.logGreen('Your project is ready.');
-
-    // const q = {
-    //   name: 'vscode',
-    //   message: 'Should I start vscode?',
-    //   default: 'Y',
-    //   type: InquirerQuestionType.confirm
-    // };
-
-    // const result: ITypedProperty<boolean> = await inquirer.prompt(q);
-
-    // if (result.vscode === true) {
-    //   this.spawnCommandSync('code', [this.destinationPath()]);
-    // }
   }
 
 }
